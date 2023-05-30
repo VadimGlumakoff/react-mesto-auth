@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import * as auth from "../utils/auth";
 
 function Register(props) {
-  
   const [formValue, setFormValue] = useState({
     email: "",
     password: "",
@@ -19,7 +18,7 @@ function Register(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.userRegister(formValue)
+    props.userRegister(formValue);
   };
 
   return (
@@ -33,6 +32,7 @@ function Register(props) {
           type="email"
           required
           onChange={handleChange}
+          value={formValue.email}
         ></input>
         <input
           className="auth__input"
@@ -41,6 +41,7 @@ function Register(props) {
           type="password"
           required
           onChange={handleChange}
+          value={formValue.password}
         ></input>
         <button className="auth__button" type="submit">
           Зарегистрироваться
